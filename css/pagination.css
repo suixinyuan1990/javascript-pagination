@@ -1,0 +1,38 @@
+.m-pagination {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 2px;
+    background-color: #fff;
+}
+
+.m-pagination a, .m-pagination i {
+    display: inline-block;
+    vertical-align: middle;
+    width: 22px;
+    color: #000;
+    text-align: center;
+    font-size: 10px;
+    margin: 0 2px 0 2px;
+    padding: 2px 0 2px 0;
+    cursor: pointer;
+    background-color: #E6E6E6;
+    -webkit-user-select:none;
+       -moz-user-select:none;
+        -ms-user-select:none;
+         -o-user-select:none;
+            user-select:none;
+}
+.m-pagination a.current {
+    color: red;
+    box-shadow: 0 1px 1px #999;
+    background-color: #DFDFDF;
+}
+
+/*.m-pagination a.pagination-prev, .m-pagination a.pagination-next {
+    
+}*/
+.m-pagination a.disabled {
+    pointer-events: none;
+    color: #aaa;
+}
+

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript Pagination</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pagination.css">
+ 
+</head>
+
+<body>
+	<div class="list">
+		<div id="pagination-container"></div>
+	</div>
+	<div class="list">
+		<div id="pagination-container2"></div>
+	</div>
+
+
+	<script src='js/util.js'></script>
+	<script  src="js/pagination.js"></script>
+	<script>
+		/* * * * * * * * * * * * * * * * *
+		* Initialization
+		* * * * * * * * * * * * * * * * */
+
+		var init = function() {
+
+			var pagination = new Pagination({
+				container: document.getElementById('pagination-container'),
+		        size: 30, // pages size
+		        page: 1,  // selected page
+		        step: 3   // pages before and after current
+			}).on('nav',function(ev){
+				var pageIndex = ev.pageIndex;
+				console.log('pagination1 pageIndex:'+pageIndex);
+			}).Init();
+
+			pagination.on('select', function(){
+			  console.log('pagination1 clicked')
+			});
+
+			var pagination2 = new Pagination({
+				container: document.getElementById('pagination-container2'),
+		        size: 300, // pages size
+		        page: 10,  // selected page
+		        step: 4   // pages before and after current
+			}).on('nav',function(ev){
+				var pageIndex = ev.pageIndex;
+				console.log('pagination2 pageIndex:'+pageIndex);
+			}).Init();
+
+			pagination2.on('select', function(){
+			  console.log('pagination2 clicked')
+			});
+		};
+
+		document.addEventListener('DOMContentLoaded', init, false);
+	</script>
+</body>
+
+</html>
